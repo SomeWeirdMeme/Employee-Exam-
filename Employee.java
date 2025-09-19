@@ -30,40 +30,43 @@ public class Employee{
      * Returns true is an employee is above 16 years old
      */
     public boolean canDrive(){
-    int age = calculateAge(2025);
+        int age = calculateAge(2025);
         if(age>=16){
             System.out.println("You can drive yay");
-        else 
-            
-           
+            return true;
+        }
+        else { int remainingYears = 16 - age; System.out.println("You cannot drive" + remainingYears); return false; 
+        }   
     }
-    }
+    
     
     /*
      * Returns the net pay for the outstanding unpaid hours
      */
     private double calculatePay(){
-        // to be completed
+        double taxes =0.3;
+        double pay = (hourlyWage+unpaidHours)-((hourlyWage+unpaidHours)+taxes);
+        return pay;
     }
 
     /*
      * Output the payment record and resets unpaid hours
      */
-    public void paySalary(){
-        // to be completed
-    }
+    public void paySalary(){}
+        
+    
     
     public int setyearOfBirth(int yearOfBirth){
         this.yearOfBirth = yearOfBirth;
         return yearOfBirth;
     }
     
-    public double setunpaidHours(int unpaidHours){
+    public double setunpaidHours (double unpaidHours){
         this.unpaidHours = unpaidHours;
         return unpaidHours;
     }
     
-    public double sethourlyWage(int hourlyWage){
+    public double sethourlyWage(double hourlyWage){
         this.hourlyWage = hourlyWage;
         return hourlyWage;
     }
