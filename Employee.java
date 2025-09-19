@@ -52,9 +52,11 @@ public class Employee{
     /*
      * Output the payment record and resets unpaid hours
      */
-    public void paySalary(){}
-        
-    
+    public void paySalary(){
+        double pay = calculatePay();
+        System.out.println("fullname" + "be paid" + pay + "USD");
+        unpaidHours = 0;
+    }
     
     public int setyearOfBirth(int yearOfBirth){
         this.yearOfBirth = yearOfBirth;
