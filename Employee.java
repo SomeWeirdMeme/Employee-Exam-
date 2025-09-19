@@ -35,7 +35,7 @@ public class Employee{
             System.out.println("You can drive yay");
             return true;
         }
-        else { int remainingYears = 16 - age; System.out.println("You cannot drive" + remainingYears); return false; 
+        else { int remainingYears = 16 - age; System.out.println("you cannot drive you have to wait " + remainingYears + " years stupid idiot I  hate you"); return false; 
         }   
     }
     
@@ -45,7 +45,7 @@ public class Employee{
      */
     private double calculatePay(){
         double taxes =0.3;
-        double pay = (hourlyWage+unpaidHours)-((hourlyWage+unpaidHours)+taxes);
+        double pay = (hourlyWage*unpaidHours)-((hourlyWage*unpaidHours)*taxes);
         return pay;
     }
 
@@ -54,7 +54,7 @@ public class Employee{
      */
     public void paySalary(){
         double pay = calculatePay();
-        System.out.println("fullname" + "be paid" + pay + "USD");
+        System.out.println(fullname + " be paid " + pay + "USD");
         unpaidHours = 0;
     }
     
@@ -73,4 +73,8 @@ public class Employee{
         return hourlyWage;
     }
     
+    public boolean setonLeave(boolean onLeave){
+        this.onLeave = onLeave;
+        return onLeave;
+    }
 }
